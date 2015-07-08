@@ -1,0 +1,34 @@
+<template name="channelInfo">
+  <aside class="channel-info channel-info-out">
+    <span class="title">
+      Channel info
+      <i data-action="display-channel-info" class="fa fa-times channel-info-exit"></i>
+    </span>
+    <div class="aside-section channel-accordion">
+      <ul class="scroll">
+        <li>
+          <input type="checkbox" checked>
+          <i class="fa fa-caret-down"></i>
+          <h2><i class="fa fa-info-circle icon icon-about"></i> About this channel</h2>
+          {{#unless currentChannel.purpose}}
+            <p class="addPurposeText">A purpose has not been set for #{{currentChannel.name}}. Why not let everyone know <a class="channel-add-purpose" href="#">what this channel is for</a>?</p>
+          {{/unless}}
+          <p class="addPurposeText">{{#markdown}}{{#linkify}}{{currentChannel.purpose}}{{/linkify}}{{/markdown}}</p>
+          <p class="created-by">Created by {{creatorUsername}} on {{dateCreated}}</p>
+        </li>
+        <li>
+          <input type="checkbox" checked>
+          <i class="fa fa-caret-down"></i>
+          <h2><i class="fa fa-thumb-tack icon icon-pinned"></i> Pinned items</h2>
+          <p>Pinned items content to be here</p>
+        </li>
+        <li>
+          <input type="checkbox" checked>
+          <i class="fa fa-caret-down"></i>
+          <h2><i class="fa fa-user icon icon-members"></i> Members</h2>
+          <p>Members content to be here</p>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</template>

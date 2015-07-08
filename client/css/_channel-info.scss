@@ -1,0 +1,235 @@
+.channel-info {
+  // box-shadow: -1px 0px 5px rgba(150, 150, 150, 0.25);
+  border-left: 2px solid #ccc;
+  position : fixed;
+  right : 0px;
+  width: $channel-info-width;
+  background: $white;
+  height: calc(100% - 53px);
+  padding: $padding;
+  box-sizing: border-box;
+  z-index: 4;
+  top: 0;
+  height: 100%;
+  transition: right 100ms ease-in-out;
+  transition: margin-right 100ms ease-out-in;
+
+  a {
+    color: #2a80b9;
+    text-decoration: none;
+    padding: 0;
+    display: inline-block;
+
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+      color: #439fe0;
+    }
+  }
+  ul {
+    margin: $padding/2 0;
+  }
+  li a:before {
+    color: lighten($primary, 10%);
+  }
+  .aside-section {
+    margin-bottom: 35px;
+  }
+  .title {
+    color : #555459;
+    text-shadow : none;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+    background: $white;
+    height : 53px;
+    z-index : 2;
+    width : 100%;
+  }
+
+  i {
+    color: lighten(desaturate($primary, 30%), 60%);
+    transition: color .2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: $primary;
+    }
+  }
+  &-out {
+    right : -$channel-info-width;
+    transition: right .2s ease-in-out;
+  }
+
+  &-exit {
+    position: absolute;
+    right: 11px;
+  }
+
+  .channel-accordion {
+
+    .transition, ul li i:before, ul li i:after {
+      transition: all 0.25s ease-in-out;
+    }
+
+    .no-select, h2 {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 42px;
+      letter-spacing: 3px;
+      font-weight: 100;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 800;
+      display: block;
+      margin: 0 0 16px;
+      cursor: pointer;
+      color: #555459;
+      transition: color 100ms ease-out;
+      cursor: pointer;
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    p {
+      color: rgba(48, 69, 92, 0.8);
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+      max-height: 800px;
+      opacity: 1;
+      transform: translate(0, 0);
+      margin-top: 14px;
+      z-index: 0;
+    }
+
+    ul {
+      list-style: none;
+      perspective: 900;
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      padding-top: 18px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    ul li:nth-of-type(1) {
+      animation-delay: 0.5s;
+    }
+    ul li:nth-of-type(2) {
+      animation-delay: 0.75s;
+    }
+    ul li:nth-of-type(3) {
+      animation-delay: 1s;
+    }
+    ul li:last-of-type {
+      padding-bottom: 0;
+    }
+    ul li i {
+      position: absolute;
+      margin-top: 12px;
+      right: 0;
+      color: #babbbf;
+    }
+    .icon {
+      position: inherit;
+      margin-right: 4px;
+    }
+
+    .icon-about{
+      color: #2d9cf5!important;
+    }
+
+    .icon-pinned{
+      color: #ff876d!important;
+    }
+
+    .icon-members{
+      color: #8BCD99;
+    }
+
+    ul li input[type=checkbox] {
+      position: absolute;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0;
+    }
+    ul li input[type=checkbox]:checked ~ p {
+      margin-top: 0;
+      margin-bottom: 0px;
+      max-height: 0;
+      opacity: 0;
+      transform: translate(0, 50%);
+    }
+    ul li input[type=checkbox]:checked ~ i {
+      transform: rotate(-90deg);
+    }
+    .created-by {
+      color: #9e9ea6;
+      font-size: 14px;
+    }
+    .addPurposeText {
+      color: #9e9ea6;
+      line-height: 1.25rem;
+      font-style: italic;
+      font-size: .9375rem;
+    }
+
+  }
+
+  .channel-add-purpose-dropdown {
+    padding: 1rem 1.25rem 0.2rem 1.25rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: $light-background;
+    color: $secondary;
+    position: fixed;
+    right: 317px;
+    left: $sidebar-width;
+    top: $top;
+    z-index: 2;
+    border-radius: .375rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,.25);
+    text-shadow: none;
+    font-size: 0.8rem;
+
+    .header-item {
+      position: relative;
+
+      hr {
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+
+      &-content {
+        color: lighten($secondary, 20%);
+        font-size: 1rem;
+        z-index: 2;
+        padding-right: 1rem;
+        background-color: white;
+        position: relative;
+      }
+
+    }
+  }
+
+
+}

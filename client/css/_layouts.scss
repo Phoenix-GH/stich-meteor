@@ -1,0 +1,153 @@
+.layouts {
+
+  &-default {
+
+    .content {
+      position: absolute;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+      min-height: 100%;
+      font-weight: 400;
+      margin: 0;
+      background: $primary;
+      color: #aaa;
+      font-family: Open Sans, sans-serif;
+      font-size: 16px;
+      line-height: 1.8em;
+
+      &-inner {
+        max-width: 960px;
+        padding: 16px 16px 32px;
+        margin: 0 auto;
+
+        p {
+          max-width: 500px;
+          margin: 0 auto;
+          padding: 8px 0;
+        }
+
+        a {
+          color: #FFF;
+          text-decoration: none;
+          font-weight: 800;
+        }
+
+        ul, li {
+          padding: 0;
+          margin: 16px;
+          list-style: none;
+        }
+
+        li {
+          display: inline-block;
+          padding: 8px 24px;
+          background: $accent;
+          margin: 8px;
+          cursor: pointer;
+
+          &:hover {
+            background: lighten($accent, 5%);
+          }
+
+          &:active {
+            background: darken($accent, 10%);
+          }
+        }
+
+        li:hover {
+          border-color: white;
+        }
+
+        form {
+          margin: 16px auto;
+          display: inline-block;
+          padding: 16px;
+          border: solid 1px #777;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.05);
+          font-size: 14px;
+          line-height: 1.7em;
+        }
+
+        button,
+        input {
+          padding: 8px 16px;
+          border: none;
+          width: 250px;
+          display: block;
+          font-size: 14px;
+          text-align: center;
+          box-sizing: border-box;
+          outline: none;
+          margin: 0;
+          margin-bottom: 6px;
+        }
+
+        button {
+          font-size: 14px;
+          color: white;
+          background: #428BCA;
+          margin-bottom: 0;
+          cursor: pointer;
+          appearence: none;
+          -webkit-appearence: none;
+          border-width: 0;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        .at-form {
+          padding: 0;
+        }
+
+        &-form {
+          h3 {
+            margin: 0;
+          }
+
+          .at-form {
+            margin-top: 0;
+            background-color: inherit;
+          }
+        }
+      }
+
+    }
+
+    .logo {
+      margin: 0 auto;
+      padding: 32px 32px 0;
+
+      &-image {
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 468px;
+        height: auto;
+        display: inline-block;
+
+        img {
+          margin-left: -12px;
+          max-width: 100%;
+          width: 468px;
+          height: auto;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      .wide {
+        display: none;
+      }
+      .logo {
+        background-position: center bottom 110px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .logo {
+        background-position: center bottom 100px;
+      }
+    }
+  }
+}

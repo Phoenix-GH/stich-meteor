@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Open Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #555459;
+}
+
+ul, li {
+  padding: 0 0 2px;
+  margin: 0;
+  list-style: none;
+  line-height: 1.5rem;
+}
+
+.show-form {
+  float: right;
+  display: block;
+  padding: 0;
+  border: none;
+  color: lighten($primary, 30%);
+  background: $primary;
+  font-size: 17px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#login-dropdown-list {
+  bottom: 30px;
+  left: 50px;
+  top: initial;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border: none;
+}

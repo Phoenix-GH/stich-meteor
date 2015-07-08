@@ -1,0 +1,75 @@
+.at-form {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 3px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.at-input {
+  margin-bottom: 10px;
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 0;
+    padding: .5rem;
+    font-size: .9rem;
+    border-radius: 3px;
+    border: 2px solid transparent;
+
+    &:focus{
+      outline: none;
+    }
+  }
+  span {
+    display: inline-block;
+    top: 10px;
+    right: 5px;
+    position: absolute;
+    color: green;
+    z-index: 1;
+  }
+  &.has-error {
+    input {
+      border-color: red;
+    }
+    span {
+      color: red;
+    }
+  }
+}
+
+.at-btn {
+  border: 0;
+  width: 100%;
+  background-color: $accent;
+  color: white;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  transition: background-color 300ms ease-out;
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken($accent, 20%);
+  }
+}
+
+.at-signup{
+  text-decoration: none;
+  color: $accent;
+  transition: color 100ms ease-out;
+
+  &:hover{
+    color: darken($accent, 20%);
+  }
+}

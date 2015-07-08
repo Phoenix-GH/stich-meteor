@@ -1,0 +1,234 @@
+.left-sidebar {
+  position: fixed;
+  top: $top;
+  width: $sidebar-width;
+  background: $primary;
+  height: calc(100% - 53px);
+  padding: $padding;
+  box-sizing: border-box;
+  z-index: 2;
+  &, a {
+    color: lighten($primary, 50%);
+    text-decoration: none;
+    text-shadow: 1px 1px darken($primary, 5%);
+  }
+  a {
+    padding: 0;
+    display: block;
+  }
+  ul {
+    margin: $padding/2 0;
+  }
+  li a:before {
+    color: lighten($primary, 10%);
+  }
+  .active {
+    background: $accent;
+    margin-left: -$padding;
+    margin-right: -$padding;
+    padding-left: $padding;
+    a {
+      color: white;
+      text-shadow: 1px 1px darken($accent, 10%);
+      &:before {
+        color: lighten($accent, 20%);
+      }
+    }
+  }
+  .team {
+    position: fixed;
+    top: 0;
+    background: darken($primary, 5%);
+    border-bottom: solid 2px darken($primary, 10%);
+    width: $sidebar-width;
+    margin-left: -$padding;
+    padding-left: $padding;
+    text-shadow: none;
+    line-height: $top;
+    height: $top;
+    box-sizing: border-box;
+    font-weight: 900;
+    color: white;
+  }
+  .aside-section {
+    margin-bottom: 35px;
+  }
+  .user-circle-online {
+    color: $online;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+  }
+  .user-circle-offline {
+    color: $offline;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+  }
+  .user-circle-idle {
+    color: $idle;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+  }
+
+  &-channels {
+    li a:before {
+      content: '#';
+      margin-right: 3px;
+      font-weight: bolder;
+    }
+
+    &-add-form {
+      padding: $padding/2 0;
+      input[type="text"] {
+        background: none;
+        border: solid 2px lighten($primary, 30%);
+        border-radius: 4px;
+        padding: 4px;
+        box-sizing: border-box;
+        color: lighten($primary, 40%);
+        font-weight: 300;
+        font-size: 15px;
+        text-shadow: none;
+        display: block;
+        width: 100%;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &-user {
+    position: fixed;
+    display: block;
+    width: 220px;
+    box-sizing: border-box;
+    padding: $padding/2;
+    margin: 0 (-$padding);
+    bottom: 0;
+    background: darken($primary, 5%);
+    border-top: solid 2px darken($primary, 10%);
+    line-height: 35px;
+    font-weight: 900;
+    a {
+      display: inline;
+    }
+    a.login-link-text {
+      color: white;
+      text-decoration: none !important;
+    }
+
+    &-show-dropdown {
+      float: right;
+      display: block;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: lighten($primary, 30%);
+      cursor: pointer;
+      outline: none;
+      font-size: 20px;
+      margin-top: 6px;
+      &.visible {
+        color: white;
+      }
+    }
+
+    &-dropdown {
+      padding: 16px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      background-color: $light-background;
+      color: $secondary;
+      position: absolute;
+      left: 150px;
+      width: 200px;
+      bottom: 50px;
+      background: #f3f3f3;
+      z-index: 2;
+      border-radius: .375rem;
+      border: solid 2px darken($primary, 10%);
+      text-shadow: none;
+      font-size: 0.8rem;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        left: 46px;
+        border-left: solid 8px transparent;
+        border-right: solid 8px transparent;
+        border-top: solid 8px darken($primary, 10%);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 49px;
+        border-left: solid 5px transparent;
+        border-right: solid 5px transparent;
+        border-top: solid 5px #f3f3f3;
+      }
+
+      a {
+        color: $secondary;
+        text-shadow: none;
+      }
+
+      .header-item {
+        position: relative;
+
+        hr {
+          position: absolute;
+          left: 0;
+          margin-top: 8px;
+          width: 100%;
+        }
+
+        &-content {
+          color: lighten($secondary, 20%);
+          font-size: 0.7rem;
+          z-index: 2;
+          padding-right: 8px;
+          background-color: #f3f3f3;
+          position: relative;
+        }
+
+      }
+
+      ul.menu-items {
+
+        li.menu-item {
+
+          &:hover {
+            background: #ddd;
+            padding-left: $padding;
+            margin: 0 -1rem;
+          }
+
+          &:active {
+            background: #aaa;
+          }
+
+          a {
+            color: $secondary;
+          }
+
+        }
+
+      }
+
+      ul li a {
+        color: $dark-text;
+        text-shadow: none;
+      }
+    }
+
+  }
+}

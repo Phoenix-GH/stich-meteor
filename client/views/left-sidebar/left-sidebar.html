@@ -1,0 +1,54 @@
+<template name="leftSidebar">
+  <aside class="left-sidebar">
+    <div class="team">
+      <span class="left-sidebar-title">
+        {{#with currentTeam}}
+          <a href="/">{{name}}</a>
+        {{else}}
+          Team Not Found
+        {{/with}}
+      </span>
+    </div>
+    {{#if currentTeam}}
+      <div class="left-sidebar-channels aside-section">
+        {{> channelForm}}
+        <ul>
+          {{#each channels}}
+          <li class="{{activeChannelClass}}"><a href="{{pathFor 'channel' team=currentTeam.slug channel=slug}}">{{channelName}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="aside-section">
+        <label for="username">Direct Messages</label>
+        <ul>
+          {{#each teamUsers}}
+            <li class="{{activeChannelClass}}">
+              <a class="open-direct-channel" href="{{pathFor 'channel' team=currentTeam.slug channel=directChannelName}}"><b class="user-circle-{{online}}">&#8226; </b>{{username}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+    <div class="left-sidebar-user-dropdown hidden">
+      <div class="header-item">
+        <hr/>
+        <span class="header-item-content">For me</span>
+      </div>
+      <ul class="menu-items">
+        <li class="menu-item"><a href="#" class="sign-out">Sign out</a></li>
+      </ul>
+      <div class="header-item">
+        <hr/>
+        <span class="header-item-content">Stitch</span>
+      </div>
+      <ul class="menu-items">
+        <li class="menu-item"><a href="http://www.teamstitch.com" target="_blank">Learn more</a></li>
+      </ul>
+    </div>
+    <div class="left-sidebar-user">
+      <img src="{{currentUser.avatar}}" class="user-avatar">
+      <a href="#">{{currentUser.username}}</a>
+      <button type="button" class="left-sidebar-user-show-dropdown"><i class="fa fa-angle-up"></i></button>
+    </div>
+  </aside>
+</template>
