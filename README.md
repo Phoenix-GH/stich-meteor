@@ -66,4 +66,4 @@ Note that SpaceTalk is distributed under the [MIT License](http://opensource.org
 
 -------
 
-Copyright © 2015 Stitch Technologies, Inc.
+
